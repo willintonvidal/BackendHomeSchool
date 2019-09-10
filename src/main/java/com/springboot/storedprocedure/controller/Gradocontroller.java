@@ -47,12 +47,17 @@ public class Gradocontroller {
 		return gradao.get_all_grados();
 	}
 	
+	@GetMapping(value= "/getallnombres")
+	public Iterable<Grado> getAllNombres() {
+		logger.debug("Get all los nombres de los grados");
+		return gradao.get_all_nombres_grados();
+	}
+	
 	@GetMapping(value= "/")
 	public String informacion() {
 		return "index";
 	}
 	
-
 	//Este metodo inserta todos los datos en la tabla grado
 	@PostMapping("/insertar")
     public String crearGrado(@Valid @RequestBody grado gra) {

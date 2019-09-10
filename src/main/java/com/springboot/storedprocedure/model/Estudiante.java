@@ -13,6 +13,21 @@ import javax.persistence.Table;
 		@NamedStoredProcedureQuery(name= "procedure-one-mostrar-estudiantes", procedureName= "gestionar_estudiante.get_all_estudiantes",parameters= {
 				@StoredProcedureParameter(mode= ParameterMode.REF_CURSOR, name= "cursorEstudiante", type= void.class)
 		}),
+		
+		
+		@NamedStoredProcedureQuery(name= "procedure-mostrar-materias-a-matri", procedureName= "GestionarRolEstudiante.mostrarMate_a_matri", parameters= {
+				@StoredProcedureParameter(mode= ParameterMode.IN, name= "id_est", type= Long.class),
+				@StoredProcedureParameter(mode= ParameterMode.REF_CURSOR, name= "cursor_materias", type= void.class)
+				
+		}),
+		
+
+		@NamedStoredProcedureQuery(name= "procedure-mostrar-materias-matri-estudiante", procedureName= "GestionarRolEstudiante.mostrarMaterias_estudiate", parameters= {
+				@StoredProcedureParameter(mode= ParameterMode.IN, name= "id_est", type= Long.class),
+				@StoredProcedureParameter(mode= ParameterMode.REF_CURSOR, name= "cursor_mateEstudiate", type= void.class)
+				
+		}),
+		
 		@NamedStoredProcedureQuery(name= "procedure-two-insertar", procedureName= "gestionar_estudiante.insertar_estudiante", parameters= {
 				@StoredProcedureParameter(mode= ParameterMode.IN, name= "estudiante_id", type= Long.class),
 				@StoredProcedureParameter(mode= ParameterMode.IN, name= "acu_numero_ident", type = Long.class),
@@ -28,7 +43,9 @@ import javax.persistence.Table;
 		@NamedStoredProcedureQuery(name= "procedure-four-eliminar", procedureName= "gestionar_estudiante.eliminar_estudiante", parameters= {
 				@StoredProcedureParameter(mode= ParameterMode.IN, name= "estudiante_id", type= Long.class),
 				@StoredProcedureParameter(mode= ParameterMode.OUT, name= "ejecuto", type= Integer.class)
-		})  
+		})
+		
+	
 })
 public class Estudiante {
 	

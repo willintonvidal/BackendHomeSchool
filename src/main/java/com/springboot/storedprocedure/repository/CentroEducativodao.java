@@ -19,6 +19,11 @@ public class CentroEducativodao {
 		return em.createNamedStoredProcedureQuery("procedure-one").getResultList();
 	}
 	
+	@SuppressWarnings("unchecked")
+	public Iterable<Centro_Educativo> get_nombres_centro_educativo() {
+		return em.createNamedStoredProcedureQuery("procedure-mostrar-nombre-centro").getResultList();
+	}
+	
 	public Integer insertar_centro_educativo(String CEN_EDU_NIT,String CEN_EDU_NOMBRE,String CEN_EDU_CIUDAD,String CEN_EDU_TELEFONO,String CEN_EDU_DIRECCION) {
 		return (Integer) em.createNamedStoredProcedureQuery("procedure-two")
 				.setParameter("nit_centro_educativo", CEN_EDU_NIT)
@@ -44,4 +49,6 @@ public class CentroEducativodao {
 				.setParameter("nit_centro_educativo", CEN_EDU_NIT)
 				.getOutputParameterValue("ejecuto");
 	}
+	
+
 }

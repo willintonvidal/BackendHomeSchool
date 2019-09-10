@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.springboot.storedprocedure.model.Centro_Educativo;
+import com.springboot.storedprocedure.model.Estudiante;
 import com.springboot.storedprocedure.model.Materia;
 import com.springboot.storedprocedure.repository.CentroEducativodao;
 import com.springboot.storedprocedure.repository.Materiadao;
@@ -91,6 +92,19 @@ public class Materiacontroller {
 		if(resul==1) return "La materia fue eliminada exitosamnete";
 		else return "No se pudo eliminar la tabla materia";
 	}
+	
+	@GetMapping(value= "/profesordelamateria/{nombre}")
+	public Iterable<Materia> materiasamatricular(@PathVariable String nombre){
+		logger.debug("Obtiene el prfesor que orienta la materia");
+		return matedao.Mostrar_profesor_materia(nombre);
+	}
+	
+	@GetMapping(value= "/temasdelamateria/{nombre}")
+	public Iterable<Materia> temasdeunamateria(@PathVariable String nombre){
+		logger.debug("temas de una materia");
+		return matedao.Mostrar_temas_materia(nombre);
+	}
+
 
 	
 }

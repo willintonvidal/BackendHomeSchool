@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.springboot.storedprocedure.model.Centro_Educativo;
+import com.springboot.storedprocedure.model.Materia;
 import com.springboot.storedprocedure.model.Tema;
 
 @Repository
@@ -50,4 +51,19 @@ public class Temadao {
 				.setParameter("id_tem", tem_id)
 				.getOutputParameterValue("ejecuto");
 	}
+	
+	@SuppressWarnings("unchecked")
+	public Iterable<Tema> Mostrar_material_por_tema(String nombretema ) {
+		return em.createNamedStoredProcedureQuery("procedure-material-tema")
+				.setParameter("nombre_tema", nombretema)
+				.getResultList();
+	}
+	
+	@SuppressWarnings("unchecked")
+	public Iterable<Tema> Mostrar_actividades_por_tema(String nombretema ) {
+		return em.createNamedStoredProcedureQuery("procedure-actividades-tema")
+				.setParameter("nombre_tema", nombretema)
+				.getResultList();
+	}
+	
 }

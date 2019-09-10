@@ -50,8 +50,6 @@ public class CentroEducativocontroller {
 	}
 	
 	
-	
-
 	//Este metodo inserta todos los datos en la tabla centro educativo
 	@PostMapping("/insertar")
     public String crearInstitucion(@Valid @RequestBody centroEducativo centro) {
@@ -82,6 +80,12 @@ public class CentroEducativocontroller {
 		Integer resul = centroEdao.eliminar_centro_educativo(id);
 		if(resul==1) return "La institucion fue eliminar el centro educativo";
 		else return "No se pudo eliminar el centro educativo";
+	}
+	
+	@GetMapping(value= "/getallnombres")
+	public Iterable<Centro_Educativo> getAllNombres() {
+		logger.debug("Obtener todos los nombres de los centros educativos ");
+		return centroEdao.get_nombres_centro_educativo();
 	}
 
 	
