@@ -43,7 +43,7 @@ public class AcudienteController {
 		
 		
 		Integer resul = acudienteRepo.insertar_acudiente(acudiente.getAcudiente_tipo_ident(),id, acudiente.getAcu_nombre_completo(),acudiente.getEcudiente_email(),acudiente.getAcudiente_telefono());
-		if(resul ==1) return "No se puedo eliminar el acudiente";
+		if(resul ==1) return "Se insertaron los datos de la tabala acudiente";
 		else return "Los datos no fueron insertados";
         
     }
