@@ -38,15 +38,15 @@ public class usuario {
     @Size(min=1, max = 30)
     private String usu_estado;
     
-    @NotBlank
+    
     @Size(min = 1, max = 40)
     private String usu_email;
     
-    @NotBlank
+    
     @Size(min = 1, max = 20)
     private String usu_telefono;
     
-    @NotBlank
+    
     @Size(min = 1, max = 60)
     private String usu_foto;
    

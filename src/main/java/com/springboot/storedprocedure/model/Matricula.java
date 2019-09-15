@@ -22,10 +22,8 @@ import javax.persistence.Table;
 				@StoredProcedureParameter(mode= ParameterMode.REF_CURSOR, name= "cursorMatricula", type= void.class)
 		}),
 		@NamedStoredProcedureQuery(name= "procedure-insertar-matricula", procedureName= "GestionarMatricula.insertarMatricula", parameters= {
-				@StoredProcedureParameter(mode= ParameterMode.IN, name= "id_matri", type= Long.class),
 				@StoredProcedureParameter(mode= ParameterMode.IN, name= "id_est", type= Long.class),
 				@StoredProcedureParameter(mode= ParameterMode.IN, name= "id_mat", type= Long.class),
-				@StoredProcedureParameter(mode= ParameterMode.IN, name= "fecha_inicio_matri", type= Date.class),
 				@StoredProcedureParameter(mode= ParameterMode.IN, name= "fecha_fin_matri", type= Date.class),
 				@StoredProcedureParameter(mode= ParameterMode.IN, name= "estado_matri", type= String.class),
 				@StoredProcedureParameter(mode= ParameterMode.IN, name= "not_final_matri", type= Double.class),

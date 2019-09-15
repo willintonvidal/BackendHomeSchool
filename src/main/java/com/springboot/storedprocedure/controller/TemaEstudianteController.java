@@ -39,23 +39,19 @@ public class TemaEstudianteController {
 	
 	@PostMapping("/insertar")
     public String crearTemaEstudiante(@Valid @RequestBody temaEstudianteRequest temaes) {
-		
-		Long uno = new Long(temaes.getRel_tema_est_id());
+	
 		Long dos = new Long(temaes.getEstudiante_id());
 		Long tres = new Long(temaes.getTema_id());
 		Long cuatro = new Long(temaes.getMateria_id());
 		//Long cinco = new Long(temaes.getRel_tema_nota());
 		Double cinco = new Double(temaes.getRel_tema_nota().replace(",","."));
 		
-		Integer resul = temaEstudianteRepo.insertar_tema_estudiante(uno,dos,tres,cuatro,cinco);
+		Integer resul = temaEstudianteRepo.insertar_tema_estudiante(dos,tres,cuatro,cinco);
 		if(resul ==1) return "Se insertaron correctamente los datos";
 		else return "Los datos no fueron insertados";
         
     }
 
-	
-	
-	
 	
 	@PutMapping("/actualizar")
 	public String actualizatTemaEstudiante(@Valid @RequestBody temaEstudianteRequest temaes) {

@@ -14,7 +14,6 @@ import javax.persistence.Table;
 				@StoredProcedureParameter(mode= ParameterMode.REF_CURSOR, name= "cursorActividadEstudiante", type= void.class)
 		}),
 		@NamedStoredProcedureQuery(name= "procedure-two-insertar-actividad-estudiante", procedureName= "gestionar_actividad_estudiante.insertar_actividad_estudiante", parameters= {
-				@StoredProcedureParameter(mode= ParameterMode.IN, name= "rel_act_est_id", type= Long.class),
 				@StoredProcedureParameter(mode= ParameterMode.IN, name= "estudiante_id", type = Long.class),
 				@StoredProcedureParameter(mode= ParameterMode.IN, name= "actividad_eva_id", type= Long.class),
 				@StoredProcedureParameter(mode= ParameterMode.IN, name= "tema_id", type= Long.class),
