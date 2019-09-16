@@ -19,6 +19,8 @@ import javax.persistence.Table;
 		@NamedStoredProcedureQuery(name= "procedure-mostrar-materia", procedureName= "GestionarMateria.mostrarMateria",parameters= {
 				@StoredProcedureParameter(mode= ParameterMode.REF_CURSOR, name= "cursorMateria", type= void.class)
 		}),
+		
+			
 		@NamedStoredProcedureQuery(name= "procedure-insertar-materia", procedureName= "GestionarMateria.insertarMateria", parameters= {
 				@StoredProcedureParameter(mode= ParameterMode.IN, name= "id_mat", type= Long.class),
 				@StoredProcedureParameter(mode= ParameterMode.IN, name= "nombre_mat", type= String.class),
@@ -46,7 +48,12 @@ import javax.persistence.Table;
 		@NamedStoredProcedureQuery(name= "procedure-mostrar-temas-materia", procedureName= "GestionarRolEstudiante.mostrarTemas_de_materia", parameters= {
 				@StoredProcedureParameter(mode= ParameterMode.IN, name= "nombre_materia", type= String.class),
 				@StoredProcedureParameter(mode= ParameterMode.REF_CURSOR, name= "cursor_temasMateria", type= void.class)
-		})  
+		}),
+		
+		@NamedStoredProcedureQuery(name= "procedure-mostrar-id-materia", procedureName= "GestionarRolEstudiante.mostrarIdMateria",parameters= {
+				@StoredProcedureParameter(mode= ParameterMode.IN, name= "nombre_materia", type= String.class),
+				@StoredProcedureParameter(mode= ParameterMode.REF_CURSOR, name= "cursor_IdMateria", type= void.class)
+		})
 })
 public class Materia {
 
