@@ -105,6 +105,9 @@ public class Materiacontroller {
 		return matedao.Mostrar_temas_materia(nombre);
 	}
 
-
-	
+	@GetMapping(value= "/idMateria/{nombre}")
+	public Iterable<Materia> Idmateria(@PathVariable String nombre){
+		logger.debug("Id de una materia");
+		return matedao.Mostrar_id_materia(nombre);
+	}
 }

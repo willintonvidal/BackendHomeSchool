@@ -59,4 +59,11 @@ public class Materiadao {
 				.getResultList();
 	}
 	
+	@SuppressWarnings("unchecked")
+	public Iterable<Materia> Mostrar_id_materia(String nombremateria ) {
+		return em.createNamedStoredProcedureQuery("procedure-mostrar-id-materia")
+				.setParameter("nombre_materia", nombremateria)
+				.getResultList();
+	}
+	
 }
