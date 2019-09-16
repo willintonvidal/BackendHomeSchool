@@ -21,6 +21,11 @@ public class Gradodao {
 		return em.createNamedStoredProcedureQuery("procedure-mostrar-grado").getResultList();
 	}
 	
+	@SuppressWarnings("unchecked")
+	public Iterable<Grado> get_all_nombres_grados() {
+		return em.createNamedStoredProcedureQuery("procedure-nombre-grado").getResultList();
+	}
+	
 	public Integer insertar_grados(Long gra_id,String gra_nombre) {
 		return (Integer) em.createNamedStoredProcedureQuery("procedure-insertar-grado")
 				.setParameter("id_gra", gra_id)

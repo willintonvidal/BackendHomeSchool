@@ -5,7 +5,7 @@ import javax.validation.constraints.Size;
 
 public class actividadEstudianteRequest {
 	
-	@NotBlank
+
     @Size(min=1, max = 60)
     private String rel_act_est_id;
 	
@@ -76,12 +76,6 @@ public class actividadEstudianteRequest {
 		this.rel_actividad_nota = rel_actividad_nota;
 	}
     
-    
-    
-    
-    
-	
-	
     
 
     

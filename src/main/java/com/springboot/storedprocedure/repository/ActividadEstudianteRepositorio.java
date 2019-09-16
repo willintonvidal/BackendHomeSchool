@@ -21,9 +21,8 @@ public class ActividadEstudianteRepositorio {
 	}
 	
 
-	public Integer insertar_actividad_estudiante(Long rel_act_est_id,Long estudiante_id,Long actividad_eva_id,Long tema_id,Long materia_id,Double rel_actividad_nota) {
+	public Integer insertar_actividad_estudiante(Long estudiante_id,Long actividad_eva_id,Long tema_id,Long materia_id,Double rel_actividad_nota) {
 		return (Integer) em.createNamedStoredProcedureQuery("procedure-two-insertar-actividad-estudiante")
-				.setParameter("rel_act_est_id", rel_act_est_id)
 				.setParameter("estudiante_id", estudiante_id)
 				.setParameter("actividad_eva_id", actividad_eva_id)
 				.setParameter("tema_id", tema_id)

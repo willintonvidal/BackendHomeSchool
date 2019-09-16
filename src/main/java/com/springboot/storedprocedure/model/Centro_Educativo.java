@@ -19,6 +19,12 @@ import javax.persistence.Table;
 		@NamedStoredProcedureQuery(name= "procedure-one", procedureName= "gestionar_centro_educativo.mostrar_centro_educativo",parameters= {
 				@StoredProcedureParameter(mode= ParameterMode.REF_CURSOR, name= "cursorInstitucion", type= void.class)
 		}),
+		
+		@NamedStoredProcedureQuery(name= "procedure-mostrar-nombre-centro", procedureName= "GestionarRolEstudiante.mostrarNombre_centro_educativo", parameters= {
+				@StoredProcedureParameter(mode= ParameterMode.REF_CURSOR, name= "cursor_nombre_centro", type= void.class)
+		}),
+		
+		
 		@NamedStoredProcedureQuery(name= "procedure-two", procedureName= "gestionar_centro_educativo.insertar_centro_educativo", parameters= {
 				@StoredProcedureParameter(mode= ParameterMode.IN, name= "nit_centro_educativo", type= String.class),
 				@StoredProcedureParameter(mode= ParameterMode.IN, name= "nombre_centro_educativo", type= String.class),
@@ -38,7 +44,9 @@ import javax.persistence.Table;
 		@NamedStoredProcedureQuery(name= "procedure-four", procedureName= "gestionar_centro_educativo.eliminar_centro_educativo", parameters= {
 				@StoredProcedureParameter(mode= ParameterMode.IN, name= "nit_centro_educativo", type= String.class),
 				@StoredProcedureParameter(mode= ParameterMode.OUT, name= "ejecuto", type= Integer.class)
-		})  
+		})
+		
+		
 })
 public class Centro_Educativo {
 

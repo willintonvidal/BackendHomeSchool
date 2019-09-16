@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.springboot.storedprocedure.model.Centro_Educativo;
+import com.springboot.storedprocedure.model.Estudiante;
+import com.springboot.storedprocedure.model.Profesor;
 import com.springboot.storedprocedure.repository.EstudianteRepositorio;
 import com.springboot.storedprocedure.request.estudianteRequest;
 
@@ -71,6 +73,18 @@ public class EstudianteController {
 		if(resul==1) return "El estudiante se elimino correctamente";
 		else return "No se pudo eliminar el estudiante";
 	}
-
+	
+	@GetMapping(value= "/mateamatricular/{id}")
+	public Iterable<Estudiante> materiasamatricular(@PathVariable Long id){
+		logger.debug("Obtiene todas las materias que el estudiante puede matricular");
+		return estudianteRepo.Materias_a_matricular(id);
+	}
+	
+	@GetMapping(value= "/getallmateriasestudiante/{id}")
+	public Iterable<Estudiante> materiasmatriestudiante(@PathVariable Long id){
+		logger.debug("Obtiene todas las materias que el estudiante ha matriculado");
+		return estudianteRepo.Materias_matri_estudiante(id);
+	}
+	
 	
 }

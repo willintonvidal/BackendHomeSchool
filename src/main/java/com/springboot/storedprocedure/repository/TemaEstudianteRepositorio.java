@@ -21,9 +21,9 @@ public class TemaEstudianteRepositorio {
 	}
 	
 
-	public Integer insertar_tema_estudiante(Long rel_tema_est_id,Long estudiante_id,Long tema_id,Long materia_id,Double rel_tema_nota) {
+	public Integer insertar_tema_estudiante(Long estudiante_id,Long tema_id,Long materia_id,Double rel_tema_nota) {
 		return (Integer) em.createNamedStoredProcedureQuery("procedure-two-insertar-tema-estudiante")
-				.setParameter("rel_tema_est_id", rel_tema_est_id)
+				
 				.setParameter("estudiante_id", estudiante_id)
 				.setParameter("tema_id", tema_id)
 				.setParameter("materia_id", materia_id)

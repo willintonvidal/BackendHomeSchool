@@ -22,12 +22,10 @@ public class Matriculadao {
 		return em.createNamedStoredProcedureQuery("procedure-mostrar-matricula").getResultList();
 	}
 	
-	public Integer insertar_matricula(Long matri_id,Long est_id,Long mat_id, Date matri_feha_inicio, Date matri_fecha_fin, String matri_estado, Double matri_not_final) {
+	public Integer insertar_matricula(Long est_id,Long mat_id, Date matri_fecha_fin, String matri_estado, Double matri_not_final) {
 		return (Integer) em.createNamedStoredProcedureQuery("procedure-insertar-matricula")
-				.setParameter("id_matri", matri_id)
 				.setParameter("id_est", est_id)
 				.setParameter("id_mat", mat_id)
-				.setParameter("fecha_inicio_matri", matri_feha_inicio)
 				.setParameter("fecha_fin_matri", matri_fecha_fin)
 				.setParameter("estado_matri", matri_estado)
 				.setParameter("not_final_matri", matri_not_final)

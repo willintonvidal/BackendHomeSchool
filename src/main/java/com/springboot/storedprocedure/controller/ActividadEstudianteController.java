@@ -46,17 +46,13 @@ public class ActividadEstudianteController {
 	
 	@PostMapping("/insertar")
     public String crearActividadEvaluativa(@Valid @RequestBody actividadEstudianteRequest actiEva) {
-		
-		Long uno = new Long(actiEva.getRel_act_est_id());
+	
 		Long dos = new Long(actiEva.getEstudiante_id());
 		Long tres = new Long(actiEva.getActividad_eva_id());
 		Long cuatro = new Long(actiEva.getTema_id());
 		Long cinco = new Long(actiEva.getMateria_id());
-
-		
 		Double seis = new Double(actiEva.getRel_actividad_nota().replace(",","."));
-		
-		Integer resul = actiEstudiante.insertar_actividad_estudiante(uno,dos,tres,cuatro,cinco,seis);
+		Integer resul = actiEstudiante.insertar_actividad_estudiante(dos,tres,cuatro,cinco,seis);
 		if(resul ==1) return "Se insertaron correctamente los datos";
 		else return "Los datos no fueron insertados";
         

@@ -5,7 +5,6 @@ import javax.validation.constraints.Size;
 
 public class matricula {
 	
-	@NotBlank
     @Size(min=1, max = 10)
     private String matri_id;
 	
@@ -17,11 +16,10 @@ public class matricula {
     @Size(min = 1, max = 30)
     private String mat_id;
     
-    @NotBlank
     @Size(min=1, max = 30)
     private String matri_fecha_inicio;
     
-    @NotBlank
+    
     @Size(min = 1, max = 30)
     private String matri_fecha_fin;
     
@@ -29,7 +27,7 @@ public class matricula {
     @Size(min = 1, max = 30)
     private String matri_estado;
 
-    @NotBlank
+    
     @Size(min = 1, max = 5)
     private String matri_not_final;
 

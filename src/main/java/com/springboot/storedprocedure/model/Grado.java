@@ -23,6 +23,11 @@ import javax.persistence.Table;
 		@NamedStoredProcedureQuery(name= "procedure-mostrar-grado", procedureName= "GestionarGrado.mostrarGrado",parameters= {
 				@StoredProcedureParameter(mode= ParameterMode.REF_CURSOR, name= "cursorGrado", type= void.class)
 		}),
+		
+		@NamedStoredProcedureQuery(name= "procedure-nombre-grado", procedureName= "GestionarRolEstudiante.mostrarNombreGrado",parameters= {
+				@StoredProcedureParameter(mode= ParameterMode.REF_CURSOR, name= "cursor_nombre_grado", type= void.class)
+		}),
+		
 		@NamedStoredProcedureQuery(name= "procedure-insertar-grado", procedureName= "GestionarGrado.insertarGrado", parameters= {
 				@StoredProcedureParameter(mode= ParameterMode.IN, name= "id_gra", type=Long.class),
 				@StoredProcedureParameter(mode= ParameterMode.IN, name= "nombre_gra", type= String.class),

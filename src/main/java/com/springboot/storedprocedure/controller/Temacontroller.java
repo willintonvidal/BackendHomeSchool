@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.springboot.storedprocedure.model.Materia;
 import com.springboot.storedprocedure.model.Tema;
 import com.springboot.storedprocedure.repository.Temadao;
 import com.springboot.storedprocedure.request.tema;
@@ -42,6 +43,18 @@ public class Temacontroller {
 	public Iterable<Tema> getAll() {
 		logger.debug("Get all los temas");
 		return temadao.get_all_temas();
+	}
+	
+	@GetMapping(value= "/materialestudio/{nombre}")
+	public Iterable<Tema> temasdeunamateria(@PathVariable String nombre){
+		logger.debug("Muestra material de estudio por un tema especifico");
+		return temadao.Mostrar_material_por_tema(nombre);
+	}
+	
+	@GetMapping(value= "/actividadesportema/{nombre}")
+	public Iterable<Tema> actividadesportema(@PathVariable String nombre){
+		logger.debug("Muestra material de estudio por un tema especifico");
+		return temadao.Mostrar_actividades_por_tema(nombre);
 	}
 	
 	@GetMapping(value= "/")

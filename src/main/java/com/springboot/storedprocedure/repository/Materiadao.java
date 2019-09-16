@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.springboot.storedprocedure.model.Centro_Educativo;
+import com.springboot.storedprocedure.model.Estudiante;
 import com.springboot.storedprocedure.model.Materia;
 
 @Repository
@@ -43,4 +44,19 @@ public class Materiadao {
 				.setParameter("id_mat", mat_id)
 				.getOutputParameterValue("ejecuto");
 	}
+	
+	@SuppressWarnings("unchecked")
+	public Iterable<Materia> Mostrar_profesor_materia(String nombremateria ) {
+		return em.createNamedStoredProcedureQuery("procedure-mostrar-profesor-materia")
+				.setParameter("nombre_materia", nombremateria)
+				.getResultList();
+	}
+	
+	@SuppressWarnings("unchecked")
+	public Iterable<Materia> Mostrar_temas_materia(String nombremateria ) {
+		return em.createNamedStoredProcedureQuery("procedure-mostrar-temas-materia")
+				.setParameter("nombre_materia", nombremateria)
+				.getResultList();
+	}
+	
 }

@@ -5,7 +5,7 @@ import javax.validation.constraints.Size;
 
 public class temaEstudianteRequest {
 	
-	@NotBlank
+	
     @Size(min=1, max = 60)
     private String rel_tema_est_id;
 	
@@ -71,14 +71,6 @@ public class temaEstudianteRequest {
 				+ ", tema_id=" + tema_id + ", materia_id=" + materia_id + ", rel_tema_nota=" + rel_tema_nota + "]";
 	}
     
-    
-	
-	
-    
-    
-    
-	
-	
     
 
     
