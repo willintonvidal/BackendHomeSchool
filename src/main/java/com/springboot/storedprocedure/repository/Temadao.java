@@ -53,16 +53,16 @@ public class Temadao {
 	}
 	
 	@SuppressWarnings("unchecked")
-	public Iterable<Tema> Mostrar_material_por_tema(String nombretema ) {
+	public Iterable<Tema> Mostrar_material_por_tema(Long idtema ) {
 		return em.createNamedStoredProcedureQuery("procedure-material-tema")
-				.setParameter("nombre_tema", nombretema)
+				.setParameter("id_tema", idtema)
 				.getResultList();
 	}
 	
 	@SuppressWarnings("unchecked")
-	public Iterable<Tema> Mostrar_actividades_por_tema(String nombretema ) {
+	public Iterable<Tema> Mostrar_actividades_por_tema(Long idtema ) {
 		return em.createNamedStoredProcedureQuery("procedure-actividades-tema")
-				.setParameter("nombre_tema", nombretema)
+				.setParameter("id_tema", idtema)
 				.getResultList();
 	}
 	

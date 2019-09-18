@@ -45,16 +45,16 @@ public class Temacontroller {
 		return temadao.get_all_temas();
 	}
 	
-	@GetMapping(value= "/materialestudio/{nombre}")
-	public Iterable<Tema> temasdeunamateria(@PathVariable String nombre){
+	@GetMapping(value= "/materialestudio/{id}")
+	public Iterable<Tema> temasdeunamateria(@PathVariable Long id){
 		logger.debug("Muestra material de estudio por un tema especifico");
-		return temadao.Mostrar_material_por_tema(nombre);
+		return temadao.Mostrar_material_por_tema(id);
 	}
 	
-	@GetMapping(value= "/actividadesportema/{nombre}")
-	public Iterable<Tema> actividadesportema(@PathVariable String nombre){
+	@GetMapping(value= "/actividadesportema/{id}")
+	public Iterable<Tema> actividadesportema(@PathVariable Long id){
 		logger.debug("Muestra material de estudio por un tema especifico");
-		return temadao.Mostrar_actividades_por_tema(nombre);
+		return temadao.Mostrar_actividades_por_tema(id);
 	}
 	
 	@GetMapping(value= "/")

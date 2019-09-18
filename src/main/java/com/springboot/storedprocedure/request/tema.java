@@ -21,15 +21,15 @@ public class tema {
     @Size(min=1, max = 500)
     private String tem_descripcion;
     
-    @NotBlank
+    
     @Size(min = 1, max = 50)
     private String tem_foto;
     
-    @NotBlank
+    
     @Size(min = 1, max = 100)
     private String tem_material_archivo;
     
-    @NotBlank
+    
     @Size(min = 1, max = 100)
     private String tem_material_video;
 
