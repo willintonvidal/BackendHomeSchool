@@ -43,8 +43,21 @@ import javax.persistence.Table;
 		@NamedStoredProcedureQuery(name= "procedure-four-eliminar", procedureName= "gestionar_estudiante.eliminar_estudiante", parameters= {
 				@StoredProcedureParameter(mode= ParameterMode.IN, name= "estudiante_id", type= Long.class),
 				@StoredProcedureParameter(mode= ParameterMode.OUT, name= "ejecuto", type= Integer.class)
-		})
+		}),
 		
+		//Mostrar notas
+		@NamedStoredProcedureQuery(name= "procedure-mostrar-nota-materia", procedureName= "GestionarRolEstudiante.mostrarNotaMateria_est", parameters= {
+				@StoredProcedureParameter(mode= ParameterMode.IN, name= "id_profesor", type= Long.class),
+				@StoredProcedureParameter(mode= ParameterMode.REF_CURSOR, name= "cursor_nota_mat", type= void.class)
+				
+		}),
+		
+		
+		@NamedStoredProcedureQuery(name= "procedure-mostrar-nota-estudiante", procedureName= "GestionarRolEstudiante.mostrarNotaTema_est", parameters= {
+				@StoredProcedureParameter(mode= ParameterMode.IN, name= "id_profesor", type= Long.class),
+				@StoredProcedureParameter(mode= ParameterMode.REF_CURSOR, name= "cursor_not_tem", type= void.class)
+				
+		})
 	
 })
 public class Estudiante {

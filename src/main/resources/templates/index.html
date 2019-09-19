@@ -644,6 +644,70 @@ var {
 	</section>
 	<!-- Termina Consultas Avanzadas rol estudiante -->
 		
+	<section id="recuperaremail" class="p-3 mb-2 bg-info text-white">
+	<h2>TABLA  USUARIO </h2>
+		<div class="metodos">
+			<h3>iniciar sesion metodo POST</h3>
+			<span>localhost:8102/api/usuario/iniciosesion</span>
+			<pre>
+			
+			{
+			"usuario_id":"2061776",
+			"usuario_contrasenia":"12345"
+			}
+			
+			
+			</pre>
+			<span>Devuelve un arreglo vacio si los datos estan incorrectos</span>
+		</div>
+	</section>
+	<h1>Mis ultimas modificaciones jueves</h1>
+	<section id="misultimasmodificaciones" class="p-3 mb-2 bg-info text-white">
+	<h2>TABLA USUARIO</h2>
+		<div class="metodos">
+			<h3>Mandar contraseña decifrada al correo metodo post</h3>
+			<span>http://localhost:8102/api/email/enviar</span>
+			<pre>
+			
+			{
+			"id":"123",
+			
+			}
+			
+			
+			</pre>
+			<br>
+			<span>Devuelve o si no existe la identificación metodo post</span>
+			
+		</div>
+	</section>
+	
+	<section id="validarusuario" class="p-3 mb-2 bg-info text-white">
+	<h2>TABLA  USUARIO </h2>
+		<div class="metodos">
+			<h3>Validar usuarios con el id metodo GET</h3>
+			<span>localhost:8102/api/usuario/validarusuario/1061775</span>
+			<br>
+		</div>
+	</section>
+	
+	<section id="validarusuario" class="p-3 mb-2 bg-info text-white">
+	<h2>TABLA  PROFESOR </h2>
+		<div class="metodos">
+			<h3>Retornar las notas por materia como dato entrada la identificación del profesor metodo GET</h3>
+			<span>http://localhost:8102/api/estudiante/notas_materia/1061777</span>
+			<br>
+		</div>
+	</section><section id="validarusuario" class="p-3 mb-2 bg-info text-white">
+	<h2>TABLA  PROFESOR </h2>
+		<div class="metodos">
+			<h3>Retornar las notas por tema como dato entrada la identificación del profesor metodo GET</h3>
+			<span>http://localhost:8102/api/estudiante/notas_tema/1061777</span>
+			<br>
+		</div>
+	</section>
+	
+	
 	
 </body>
 </html>

@@ -86,5 +86,17 @@ public class EstudianteController {
 		return estudianteRepo.Materias_matri_estudiante(id);
 	}
 	
+	@GetMapping(value= "/notas_materia/{id}")
+	public Iterable<Estudiante> nota_materia_estudiante(@PathVariable Long id){
+		logger.debug("Obtiene las nota de la materia de estudiante por profesor");
+		return estudianteRepo.get_notas_por_materia(id);
+	}
+	
+	@GetMapping(value= "/notas_tema/{id}")
+	public Iterable<Estudiante> nota_tema_estudiante(@PathVariable Long id){
+		logger.debug("Obtiene las nota del tema de estudiante por profesor");
+		return estudianteRepo.get_notas_por_tema(id);
+	}
+	
 	
 }

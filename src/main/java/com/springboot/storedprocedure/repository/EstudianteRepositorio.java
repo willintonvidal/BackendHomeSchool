@@ -59,6 +59,22 @@ public class EstudianteRepositorio {
 				.getResultList();
 	}
 	
+	//Mostrando notas
+	
+	@SuppressWarnings("unchecked")
+	public Iterable<Estudiante> get_notas_por_materia(Long id_profesor) {
+		return em.createNamedStoredProcedureQuery("procedure-mostrar-nota-materia")
+				.setParameter("id_profesor", id_profesor)
+				.getResultList();
+	}
+	
+	@SuppressWarnings("unchecked")
+	public Iterable<Estudiante> get_notas_por_tema(Long id_profesor) {
+		return em.createNamedStoredProcedureQuery("procedure-mostrar-nota-estudiante")
+				.setParameter("id_profesor", id_profesor)
+				.getResultList();
+	}
+	
 	
 	
 }
