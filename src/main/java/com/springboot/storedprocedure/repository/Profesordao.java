@@ -5,6 +5,8 @@ import javax.persistence.EntityManager;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+
+import com.springboot.storedprocedure.model.Estudiante;
 import com.springboot.storedprocedure.model.Profesor;
 
 @Repository
@@ -46,5 +48,19 @@ public class Profesordao {
 		return (Integer) em.createNamedStoredProcedureQuery("procedure-eliminar-profesor")
 				.setParameter("id_prof", prof_id)
 				.getOutputParameterValue("ejecuto");
+	}
+	
+	@SuppressWarnings("unchecked")
+	public Iterable<Profesor> Notas_Materias_estudiante(Long prof_id) {
+		return em.createNamedStoredProcedureQuery("procedure-mostrar-materias-nota")
+				.setParameter("id_profesor", prof_id)
+				.getResultList();
+	}
+	
+	@SuppressWarnings("unchecked")
+	public Iterable<Profesor> Notas_temas_etudiante(Long prof_id) {
+		return em.createNamedStoredProcedureQuery("procedure-mostrar-temas-nota")
+				.setParameter("id_profesor", prof_id)
+				.getResultList();
 	}
 }

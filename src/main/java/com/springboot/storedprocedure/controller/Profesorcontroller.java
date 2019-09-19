@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.springboot.storedprocedure.model.Estudiante;
 import com.springboot.storedprocedure.model.Profesor;
 import com.springboot.storedprocedure.repository.Profesordao;
 import com.springboot.storedprocedure.request.centroEducativo;
@@ -84,6 +85,21 @@ public class Profesorcontroller {
 		if(resul==1) return "El profesor se elimino correctamente";
 		else return "No se pudo eliminar el profesor";
 	}
+	
+	@GetMapping(value= "/getnotasmateria/{id}")
+	public Iterable<Profesor> notamateriasest(@PathVariable Long id){
+		logger.debug("Obtiene todas las notas de la materia del estudiante");
+		return profedao.Notas_Materias_estudiante(id);
+	}
+	
+	@GetMapping(value= "/getnotastemas/{id}")
+	public Iterable<Profesor> notatemasest(@PathVariable Long id){
+		logger.debug("Obtiene todas las notas de la materia del estudiante");
+		return profedao.Notas_temas_etudiante(id);
+	}
+	
+	
+	
 
 	
 }
