@@ -144,5 +144,4 @@ public class usuario {
 }
 /*
 { "usu_id":"15677", "cen_edu_nit":"1065", "usu_tipo_documento":"cedula", "usu_nombres":"Alexandra", "usu_apellidos":"Pino","usu_tipo_usuario":"estudiante", "usu_contrasenia":"paola", "usu_estado":"estudy", "usu_email":"nuevo", "usu_telefono":"3455", "usu_foto":"hgi"}
-
  */

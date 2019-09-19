@@ -72,7 +72,30 @@ import javax.persistence.Table;
 				@StoredProcedureParameter(mode= ParameterMode.IN, name= "usuario_id", type= Long.class),
 				@StoredProcedureParameter(mode= ParameterMode.OUT, name= "tipo_role", type= String.class),
 				
-		})  
+		}),
+		@NamedStoredProcedureQuery(name= "restaurar", procedureName= "GestionarUsuario.datos_envio_contrasenia",parameters= {
+				@StoredProcedureParameter(mode= ParameterMode.IN, name= "usuario_id", type= Long.class),
+				@StoredProcedureParameter(mode= ParameterMode.REF_CURSOR, name= "cursorDatos_envio_", type= void.class)
+				
+		}),
+		@NamedStoredProcedureQuery(name= "mostrar_datos_pass", procedureName= "GestionarUsuario.datospass",parameters= {
+				@StoredProcedureParameter(mode= ParameterMode.IN, name= "usuario_id", type= Long.class),
+				@StoredProcedureParameter(mode= ParameterMode.REF_CURSOR, name= "cursorDatospass", type= void.class)
+		})
+		//ENVIAR AL CORREO
+		,
+		@NamedStoredProcedureQuery(name= "nombre-for-correo", procedureName= "restauracion_password.nombres_usu",parameters= {
+				@StoredProcedureParameter(mode= ParameterMode.IN, name= "usuario_id", type= Long.class),
+				@StoredProcedureParameter(mode= ParameterMode.OUT, name= "nom_usu", type= String.class)
+		}),
+		@NamedStoredProcedureQuery(name= "email-for-correo", procedureName= "restauracion_password.email_usu",parameters= {
+				@StoredProcedureParameter(mode= ParameterMode.IN, name= "usuario_id", type= Long.class),
+				@StoredProcedureParameter(mode= ParameterMode.OUT, name= "email_usu", type= String.class)
+		}),
+		@NamedStoredProcedureQuery(name= "password-for-correo", procedureName= "restauracion_password.password_usu",parameters= {
+				@StoredProcedureParameter(mode= ParameterMode.IN, name= "usuario_id", type= Long.class),
+				@StoredProcedureParameter(mode= ParameterMode.OUT, name= "pass_usu", type= String.class)
+		})
 })
 public class Usuario {
 

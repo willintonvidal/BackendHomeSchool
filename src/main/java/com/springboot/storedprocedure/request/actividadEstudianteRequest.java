@@ -77,12 +77,6 @@ public class actividadEstudianteRequest {
 	}
     
     
-    
-    
-    
-	
-	
-    
 
     
 	
