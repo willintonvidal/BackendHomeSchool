@@ -1,5 +1,6 @@
 package com.springboot.storedprocedure.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -62,6 +63,16 @@ public class Usuariocontroller {
 		logger.debug("Get all los usuarios no validados");
 		return Usudao.get_usuarios_no_validados();
 	}
+	
+	@GetMapping(value= "/datopass")
+	public Iterable<Usuario> get_datos_pass() {
+		logger.debug("Datos para el correo");
+		Long id= new Long ("123456");
+		return Usudao.get_datos_pass(id);
+	}
+	
+	
+	
 	
 
 	

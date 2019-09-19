@@ -19,8 +19,20 @@ public class Usuariodao {
 	}
 	
 	@SuppressWarnings("unchecked")
+	public Iterable<Usuario> get_datos_pass(Long usuario_id) {
+		return em.createNamedStoredProcedureQuery("mostrar_datos_pass")
+				.setParameter("usuario_id", usuario_id)
+				.getResultList();
+	}
+	
+	@SuppressWarnings("unchecked")
 	public Iterable<Usuario> get_usuarios_no_validados() {
 		return em.createNamedStoredProcedureQuery("procedure-mostrar-usuarios-no-validados").getResultList();
+	}
+	
+	@SuppressWarnings("unchecked")
+	public Iterable<Usuario> get_datos_restauracion(Long usuario_id) {
+		return em.createNamedStoredProcedureQuery("restaurar").getResultList();
 	}
 	
 	@SuppressWarnings("unchecked")
@@ -93,4 +105,25 @@ public class Usuariodao {
 				.setParameter("id_usu", usu_id)
 				.getOutputParameterValue("ejecuto");
 	}
+	
+	
+	//enviar correo
+	public String  get_nombre_for_correo(Long usuario_id) {
+		return (String) em.createNamedStoredProcedureQuery("nombre-for-correo")
+				.setParameter("usuario_id", usuario_id)
+				.getOutputParameterValue("nom_usu");
+	}
+	
+	public String  get_email_for_correo(Long usuario_id) {
+		return (String) em.createNamedStoredProcedureQuery("email-for-correo")
+				.setParameter("usuario_id", usuario_id)
+				.getOutputParameterValue("email_usu");
+	}
+	
+	public String  get_password_for_correo(Long usuario_id) {
+		return (String) em.createNamedStoredProcedureQuery("password-for-correo")
+				.setParameter("usuario_id", usuario_id)
+				.getOutputParameterValue("pass_usu");
+	}
+	
 }
