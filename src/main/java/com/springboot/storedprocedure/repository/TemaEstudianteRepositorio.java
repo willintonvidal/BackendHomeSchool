@@ -46,4 +46,12 @@ public class TemaEstudianteRepositorio {
 				.setParameter("rel_tema_est_id",rel_tema_est_id)
 				.getOutputParameterValue("ejecuto");
 	}
+	
+	public Long promedio_for_tema_estudiante(Long estudiante_id,Long tema_id,Long materia_id) {
+		return (Long) em.createNamedStoredProcedureQuery("promedio-for-tema")
+				.setParameter("estudiante_id",estudiante_id)
+				.setParameter("tema_id",tema_id)
+				.setParameter("materia_id",materia_id)
+				.getOutputParameterValue("promedio");
+	}
 }

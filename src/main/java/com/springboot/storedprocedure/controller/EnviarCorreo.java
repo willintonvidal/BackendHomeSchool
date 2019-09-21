@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.springboot.storedprocedure.model.Usuario;
 import com.springboot.storedprocedure.repository.Usuariodao;
+import com.springboot.storedprocedure.request.datos_acudiente_y_promedio;
 import com.springboot.storedprocedure.request.enviarEmailRequest;
 import com.springboot.storedprocedure.request.id_restauracion_;
 import com.springboot.storedprocedure.request.inicioSesionRequest;
@@ -111,6 +112,24 @@ public class EnviarCorreo {
 	
 	
 	
+	
+	@PostMapping(value= "/promedio")
+	public String enviar_correo_promedio_materias_est(@Valid @RequestBody datos_acudiente_y_promedio em) {
+
+		SimpleMailMessage email = new SimpleMailMessage();
+		
+		
+		email.setTo(em.getCorreo());
+        email.setSubject("Información del promedio de tu hijo");
+        email.setText("Hola "+em.getNom_acudiente() +", espero te encuntres bien "
+        		+ "El promedio de tu niño es de "+em.getPromedio()
+        		+" Te invitamos a que cada día motives mas a tus hijos");
+        
+        mailSender.send(email);
+		return "enviado";
+		
+		
+	}
 
 	
 	

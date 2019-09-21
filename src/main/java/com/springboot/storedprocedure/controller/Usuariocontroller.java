@@ -136,6 +136,10 @@ public class Usuariocontroller {
 		if(resul==1) return "se elimino correctamete el usuario";
 		else return "No se pudo eliminar el usuario";
 	}
+	
+	
+	
+	
 
 	
 }

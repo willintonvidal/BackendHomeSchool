@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.springboot.storedprocedure.model.Centro_Educativo;
 import com.springboot.storedprocedure.model.Estudiante;
 import com.springboot.storedprocedure.model.Profesor;
+import com.springboot.storedprocedure.model.Usuario;
 import com.springboot.storedprocedure.repository.EstudianteRepositorio;
 import com.springboot.storedprocedure.request.estudianteRequest;
 
@@ -98,5 +99,12 @@ public class EstudianteController {
 		return estudianteRepo.get_notas_por_tema(id);
 	}
 	
+	
+	@GetMapping("/datos_acudiente/{id}")
+	public Iterable<Centro_Educativo> datos_acudiente_para_enviar_correo(@PathVariable Long id) {
+			
+		return estudianteRepo.get_datos_acudiente_email_nombre(id);
+        
+    }
 	
 }

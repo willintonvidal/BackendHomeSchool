@@ -57,6 +57,11 @@ import javax.persistence.Table;
 				@StoredProcedureParameter(mode= ParameterMode.IN, name= "id_profesor", type= Long.class),
 				@StoredProcedureParameter(mode= ParameterMode.REF_CURSOR, name= "cursor_not_tem", type= void.class)
 				
+		}),
+		
+		@NamedStoredProcedureQuery(name= "procedure-datos-acudiente", procedureName= "gestionar_estudiante.datos_acudiente_email_nombre",parameters= {
+				@StoredProcedureParameter(mode= ParameterMode.IN, name= "estudiante_id", type= Long.class),
+				@StoredProcedureParameter(mode= ParameterMode.REF_CURSOR, name= "cursor_datos_acudiente", type= void.class)
 		})
 	
 })

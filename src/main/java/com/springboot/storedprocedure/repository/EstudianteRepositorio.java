@@ -22,6 +22,13 @@ public class EstudianteRepositorio {
 		return em.createNamedStoredProcedureQuery("procedure-one-mostrar-estudiantes").getResultList();
 	}
 	
+	@SuppressWarnings("unchecked")
+	public Iterable<Centro_Educativo> get_datos_acudiente_email_nombre(Long estudiante_id) {
+		return em.createNamedStoredProcedureQuery("procedure-datos-acudiente")
+				.setParameter("estudiante_id", estudiante_id)
+				.getResultList();
+	}
+	
 
 	public Integer insertar_estudiante(Long estudiante_id,Long acu_numero_ident,Long grado_id) {
 		return (Integer) em.createNamedStoredProcedureQuery("procedure-two-insertar")

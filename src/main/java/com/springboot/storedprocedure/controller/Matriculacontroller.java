@@ -78,11 +78,9 @@ public class Matriculacontroller {
 		Long matri_id= new Long (matr.getMatri_id());
 		Long est_id= new Long (matr.getEst_id());
 		Long mat_id= new Long (matr.getMat_id());
-		Date matri_f_inicio= new SimpleDateFormat("dd-MM-yyyy").parse(matr.getMatri_fecha_inicio());
-		Date matri_f_fin= new SimpleDateFormat("dd-MM-yyyy").parse(matr.getMatri_fecha_fin());
 		Double matri_not_final= new Double (matr.getMatri_not_final());
 		
-		Integer resul =matridao.actualizar_matricula( matri_id, est_id, mat_id, matri_f_inicio, matri_f_fin, matr.getMatri_estado(), matri_not_final);
+		Integer resul =matridao.actualizar_matricula( matri_id, est_id, mat_id, matr.getMatri_estado(), matri_not_final);
 		if(resul ==1) return "Los datos fueron actualizados correctamente para la tabla matricula";
 		else return "No se pudo actualizar los datos de la tabla matricula";
     }

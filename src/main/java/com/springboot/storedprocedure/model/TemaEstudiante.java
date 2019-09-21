@@ -31,7 +31,14 @@ import javax.persistence.Table;
 		@NamedStoredProcedureQuery(name= "procedure-four-eliminar-tema-estudiante", procedureName= "gestionar_tema_estudiante.eliminar_tema_estudiante", parameters= {
 				@StoredProcedureParameter(mode= ParameterMode.IN, name= "rel_tema_est_id", type= Long.class),
 				@StoredProcedureParameter(mode= ParameterMode.OUT, name= "ejecuto", type= Integer.class)
-		})  
+		}),//Sacando el promedio por tema
+		
+		@NamedStoredProcedureQuery(name= "promedio-for-tema", procedureName= "gestionar_tema_estudiante.promedio_tema_for_estudiante", parameters= {
+				@StoredProcedureParameter(mode= ParameterMode.IN, name= "estudiante_id", type= Long.class),
+				@StoredProcedureParameter(mode= ParameterMode.IN, name= "tema_id", type= Long.class),
+				@StoredProcedureParameter(mode= ParameterMode.IN, name= "materia_id", type= Long.class),
+				@StoredProcedureParameter(mode= ParameterMode.OUT, name= "promedio", type= Long.class)
+		})
 })
 public class TemaEstudiante {
 	

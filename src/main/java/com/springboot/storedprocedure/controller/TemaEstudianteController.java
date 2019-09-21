@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.springboot.storedprocedure.model.Centro_Educativo;
 import com.springboot.storedprocedure.repository.TemaEstudianteRepositorio;
+import com.springboot.storedprocedure.request.promedio_tema_request;
 import com.springboot.storedprocedure.request.temaEstudianteRequest;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -33,6 +34,18 @@ public class TemaEstudianteController {
 	public Iterable<Centro_Educativo> getAll() {
 		logger.debug("Get all Tema estudiante");
 		return temaEstudianteRepo.get_all_tema_estudiante();
+	}
+	
+	
+	//Sacando el promedio de la materia
+	@PostMapping(value= "/promedio_tema")
+	public Long NotaPromedioTema(@Valid @RequestBody promedio_tema_request tema) {
+		logger.debug("Promedio por nota tema");
+		Long uno = new Long(tema.getId());
+		Long dos = new Long(tema.getTem_id());
+		Long tres = new Long(tema.getMat_id());
+		
+		return temaEstudianteRepo.promedio_for_tema_estudiante(uno,dos,tres);
 	}
 	
 

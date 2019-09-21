@@ -32,9 +32,7 @@ import javax.persistence.Table;
 		@NamedStoredProcedureQuery(name= "procedure-actualizar-matricula", procedureName= "GestionarMatricula.actualizarMatricula", parameters= {
 				@StoredProcedureParameter(mode= ParameterMode.IN, name= "id_matri", type= Long.class),
 				@StoredProcedureParameter(mode= ParameterMode.IN, name= "id_est", type= Long.class),
-				@StoredProcedureParameter(mode= ParameterMode.IN, name= "id_mat", type= Long.class),
-				@StoredProcedureParameter(mode= ParameterMode.IN, name= "fecha_inicio_matri", type= Date.class),
-				@StoredProcedureParameter(mode= ParameterMode.IN, name= "fecha_fin_matri", type= Date.class),
+				@StoredProcedureParameter(mode= ParameterMode.IN, name= "id_mat", type= Long.class),			
 				@StoredProcedureParameter(mode= ParameterMode.IN, name= "estado_matri", type= String.class),
 				@StoredProcedureParameter(mode= ParameterMode.IN, name= "not_final_matri", type= Double.class),
 				@StoredProcedureParameter(mode= ParameterMode.OUT, name= "ejecuto", type= Integer.class)
@@ -42,7 +40,7 @@ import javax.persistence.Table;
 		@NamedStoredProcedureQuery(name= "procedure-eliminar-matricula", procedureName= "GestionarMatricula.eliminarMatricula", parameters= {
 				@StoredProcedureParameter(mode= ParameterMode.IN, name= "id_matri", type= Long.class),
 				@StoredProcedureParameter(mode= ParameterMode.OUT, name= "ejecuto", type= Integer.class)
-		})  
+		}) 
 })
 public class Matricula {
 
