@@ -122,7 +122,7 @@ public class EnviarCorreo {
 		email.setTo(em.getCorreo());
         email.setSubject("Información del promedio de tu hijo");
         email.setText("Hola "+em.getNom_acudiente() +", espero te encuntres bien "
-        		+ "El promedio de tu niño es de "+em.getPromedio()
+        		+ "El promedio de tu niño es de "+em.getPromedio() +" en la materia "+em.getMateria()
         		+" Te invitamos a que cada día motives mas a tus hijos");
         
         mailSender.send(email);
